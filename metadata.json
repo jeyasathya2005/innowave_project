@@ -1,0 +1,5 @@
+{
+  "name": "InnoWave Smart Employee Onboarding Assistant",
+  "description": "An enterprise-grade HR portal featuring a RAG-powered AI assistant, employee handbook, and company directory for InnoWave Technologies.",
+  "requestFramePermissions": []
+}
