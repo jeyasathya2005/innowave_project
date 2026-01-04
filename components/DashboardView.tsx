@@ -8,23 +8,23 @@ interface DashboardViewProps {
 
 const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
   return (
-    <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
-      <header className="relative bg-indigo-700 rounded-3xl p-10 overflow-hidden text-white shadow-2xl">
-        <div className="relative z-10 max-w-2xl">
-          <h1 className="text-4xl font-extrabold mb-4">Welcome to InnoWave!</h1>
-          <p className="text-indigo-100 text-lg leading-relaxed">
+    <div className="space-y-6 md:space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+      <header className="relative bg-indigo-700 rounded-2xl md:rounded-3xl p-6 md:p-10 overflow-hidden text-white shadow-2xl">
+        <div className="relative z-10 max-w-2xl text-center md:text-left">
+          <h1 className="text-3xl md:text-4xl font-extrabold mb-4">Welcome to InnoWave!</h1>
+          <p className="text-indigo-100 text-base md:text-lg leading-relaxed">
             We're thrilled to have you join our team of innovators. This portal is your primary hub for everything you need to hit the ground running.
           </p>
-          <div className="mt-8 flex space-x-4">
+          <div className="mt-8 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 items-center justify-center md:justify-start">
             <button 
               onClick={() => onNavigate(AppSection.CHAT)}
-              className="bg-white text-indigo-700 px-6 py-3 rounded-xl font-bold hover:bg-indigo-50 transition shadow-lg"
+              className="w-full sm:w-auto bg-white text-indigo-700 px-6 py-3 rounded-xl font-bold hover:bg-indigo-50 transition shadow-lg"
             >
               Start Onboarding Chat
             </button>
             <button 
               onClick={() => onNavigate(AppSection.HANDBOOK)}
-              className="bg-indigo-600/50 backdrop-blur-sm border border-indigo-400/50 px-6 py-3 rounded-xl font-bold hover:bg-indigo-600 transition"
+              className="w-full sm:w-auto bg-indigo-600/50 backdrop-blur-sm border border-indigo-400/50 px-6 py-3 rounded-xl font-bold hover:bg-indigo-600 transition"
             >
               Browse Handbook
             </button>
@@ -39,26 +39,26 @@ const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
         </div>
       </header>
 
-      {/* AI Technical Insight Section for Reviewers */}
-      <div className="bg-indigo-50 border border-indigo-100 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between">
+      {/* AI Technical Insight Section */}
+      <div className="bg-indigo-50 border border-indigo-100 rounded-2xl p-4 md:p-6 flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0">
         <div className="flex items-center space-x-4">
-          <div className="bg-indigo-600 text-white p-3 rounded-lg">
+          <div className="bg-indigo-600 text-white p-3 rounded-lg shrink-0">
             <i className="fa-solid fa-microchip"></i>
           </div>
-          <div>
-            <h4 className="font-bold text-indigo-900">AI Architecture Diagnostics</h4>
-            <p className="text-indigo-700 text-sm">System is utilizing RAG with Gemini 3 Flash and In-Context Learning.</p>
+          <div className="text-center lg:text-left">
+            <h4 className="font-bold text-indigo-900 text-sm md:text-base">AI Architecture Diagnostics</h4>
+            <p className="text-indigo-700 text-xs md:text-sm">System is utilizing RAG with Gemini 3 Flash and In-Context Learning.</p>
           </div>
         </div>
-        <div className="mt-4 md:mt-0 flex space-x-3">
-          <span className="px-3 py-1 bg-white border border-indigo-200 rounded-full text-xs font-semibold text-indigo-600">Model: Gemini-3-Flash</span>
-          <span className="px-3 py-1 bg-white border border-indigo-200 rounded-full text-xs font-semibold text-indigo-600">Retrieval: RAG (Context-Injected)</span>
-          <span className="px-3 py-1 bg-green-100 border border-green-200 rounded-full text-xs font-semibold text-green-700">Status: Optimized</span>
+        <div className="flex flex-wrap justify-center gap-2">
+          <span className="px-3 py-1 bg-white border border-indigo-200 rounded-full text-[10px] font-semibold text-indigo-600">Gemini-3-Flash</span>
+          <span className="px-3 py-1 bg-white border border-indigo-200 rounded-full text-[10px] font-semibold text-indigo-600">RAG (Context-Injected)</span>
+          <span className="px-3 py-1 bg-green-100 border border-green-200 rounded-full text-[10px] font-semibold text-green-700">Optimized</span>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
           <div className="w-12 h-12 bg-pink-100 text-pink-600 rounded-xl flex items-center justify-center mb-6">
             <i className="fa-solid fa-calendar-check text-xl"></i>
           </div>
@@ -80,7 +80,7 @@ const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
           </div>
         </div>
 
-        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+        <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
           <div className="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mb-6">
             <i className="fa-solid fa-people-group text-xl"></i>
           </div>
@@ -105,7 +105,7 @@ const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
           </button>
         </div>
 
-        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+        <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition md:col-span-2 lg:col-span-1">
           <div className="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-xl flex items-center justify-center mb-6">
             <i className="fa-solid fa-lightbulb text-xl"></i>
           </div>

@@ -19,13 +19,16 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) =>
 
   return (
     <div className="w-64 bg-indigo-900 text-white h-full flex flex-col shadow-xl">
-      <div className="p-6 border-b border-indigo-800 flex items-center space-x-3">
-        <div className="bg-white p-2 rounded-lg">
-          <i className="fa-solid fa-wave-square text-indigo-900 text-xl"></i>
+      <div className="p-6 border-b border-indigo-800 flex items-center justify-between">
+        <div className="flex items-center space-x-3">
+          <div className="bg-white p-2 rounded-lg">
+            <i className="fa-solid fa-wave-square text-indigo-900 text-xl"></i>
+          </div>
+          <span className="font-bold text-lg tracking-tight">InnoWave</span>
         </div>
-        <span className="font-bold text-lg tracking-tight">InnoWave</span>
+        {/* Mobile close indicator is implicitly the backdrop, but we could add a button here if needed */}
       </div>
-      <nav className="flex-1 mt-6 px-4 space-y-1">
+      <nav className="flex-1 mt-6 px-4 space-y-1 overflow-y-auto">
         {navItems.map((item) => (
           <button
             key={item.id}
@@ -43,12 +46,12 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) =>
       </nav>
       <div className="p-6 border-t border-indigo-800">
         <div className="flex items-center space-x-3 text-sm text-indigo-300">
-          <div className="bg-indigo-500 w-8 h-8 rounded-full flex items-center justify-center text-white">
+          <div className="bg-indigo-500 w-8 h-8 rounded-full flex items-center justify-center text-white shrink-0">
             <i className="fa-solid fa-shield"></i>
           </div>
-          <div>
-            <p className="text-white font-medium">Admin Access</p>
-            <p className="text-xs">Full Permissions</p>
+          <div className="truncate">
+            <p className="text-white font-medium truncate">Admin Access</p>
+            <p className="text-xs truncate">Full Permissions</p>
           </div>
         </div>
       </div>
